@@ -1,4 +1,7 @@
 #Display a menu of options
+dictionary = { } 
+
+
 print("~~~~~MENU~~~~~")
 print()
 print("(1) Add an Item")
@@ -32,36 +35,19 @@ while True:
         religion = input("Religion: ")
         status = input("Status: ")
         print("SAVED!")
+
+        dictionary[surname] = givename, middlename, sex, age, birthmonth, dayofbirth, birthyear, placeofbirth, langguage, occupation, contactnu, citizenship, province, city, baranggay, religion, status
     elif userans == 2:
         askuser = input("Enter your Surname to search: ")
-        if askuser == surname:
-            print(dictionary)
-        elif askuser != surname:
-            print("Please add Item First or Check the spelling and the captalization you input.")
+        if askuser in dictionary:
+            print(f"{askuser}'s Informations: {dictionary[askuser]}")
+        else:
+            print("Your Information is not added already or Check the spelling.")
     elif userans == 3:
         yesno = input("Are you sure? (y or n): ")
         if yesno == "y":
             break
-    dictionary = {
-            "Surname": surname,
-            "Given name": givename,
-            "Middle name": middlename,
-            "Sex" : sex,
-            "Age" : age,
-            "Birth Month" : birthmonth,
-            "Day of Birth" :  dayofbirth,
-            "Birth year" : birthyear, 
-            "Place of Birth" :  placeofbirth,
-            "Langguage" : langguage,
-            "Occupation" : occupation,
-            "Contact Number" : contactnu,
-            "Citizenship" :  citizenship,
-            "Province" : province,
-            "City" : city, 
-            "Brgy" : baranggay,
-            "Religion" : religion,
-            "Status" : status  
-        } 
+    
 
 
 
